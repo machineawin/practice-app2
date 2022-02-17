@@ -3,9 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Counter extends Component {
     state = { 
-        value: 0
+        value: this.props.value
      } 
 
+     
     countFormat () {
         if (this.state.value == 0)
         return (<span className='badge bg-dark'> Zero </span>);
@@ -19,8 +20,13 @@ class Counter extends Component {
     }
 
     render() { 
+
+        console.log ('id', this.props.id);
+        console.log ('value', this.props.value);
+
+
         return (
-            <React.Fragment>
+            <div>
                 <button 
                 className="btn btn-primary m-2"
                 onClick={ this.handleIncrement }
@@ -29,7 +35,7 @@ class Counter extends Component {
                 </button>
                 {this.countFormat()}
                 
-            </React.Fragment>
+            </div>
         );
     }
 }
