@@ -2,20 +2,16 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Counter extends Component {
-    state = { 
-        value: this.props.value
-     } 
-
-     
+         
     countFormat () {
-        if (this.state.value == 0)
+        if (this.props.value == 0)
         return (<span className='badge bg-dark'> Zero </span>);
-        return (<span className='badge bg-secondary'> {this.state.value} </span>);
+        return (<span className='badge bg-secondary'> {this.props.value} </span>);
 
     };
 
     handleIncrement = () => {
-        const value = this.state.value +1;
+        const value = this.props.value +1;
         this.setState ({value});
     }
 
